@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "esnext",
+    "lib": ["esnext"],
+    "alwaysStrict": true,
+    "strict": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": [
+      "@types/jest",
+      "@types/service-worker-mock",
+      "@types/node",
+    ]
+  },
+  "include": ["src/**/*.ts", "../discord-api-status/schedules", "./worker-configuration.d.ts"],
+  "exclude": ["node_modules", "dist", "test"]
+}

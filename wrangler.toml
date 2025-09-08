@@ -1,0 +1,14 @@
+name = "discord-incidents"
+main = "src/index.ts"
+account_id = "ffb8e15ec5123398e70eaaad17d26b27"
+
+workers_dev = true
+compatibility_date = "2025-05-05"
+compatibility_flags = ["nodejs_compat"]
+
+kv_namespaces = [
+        { binding = "INCIDENTS", id = "162f46a131e942c0a26f365b10c8bff8" }
+]
+
+[triggers]
+crons = ["*/5 * * * *"]

@@ -1,5 +1,5 @@
 {
-  "name": "discord-incident-worker",
+  "name": "discord-incidents-worker",
   "version": "0.0.1",
   "description": "Cloudflare worker TypeScript template",
   "main": "dist/worker.js",

@@ -1,39 +1,53 @@
-# ʕ •́؈•̀) `worker-typescript-template`
+# Discord Incident Worker
 
-A batteries included template for kick starting a TypeScript Cloudflare worker project.
+Hey there! 👋 This project is an open source Discord incidents monitor, built with Cloudflare Workers and TypeScript. It automatically tracks Discord service incidents and can be customized for your own monitoring or notification needs.
 
-## Note: You must use [wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) 1.17 or newer to use this template.
+## What is this?
 
-## 🔋 Getting Started
+This repo contains a Cloudflare Worker (written in TypeScript) that monitors Discord's status and incidents. It's designed for automation, alerting, or integrating with other tools—perfect for anyone who wants to keep tabs on Discord's uptime and issues.
 
-This template is meant to be used with [Wrangler](https://github.com/cloudflare/wrangler). If you are not already familiar with the tool, we recommend that you install the tool and configure it to work with your [Cloudflare account](https://dash.cloudflare.com). Documentation can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler/).
+## Getting Started
 
-To generate using Wrangler, run this command:
+You'll need [Wrangler](https://github.com/cloudflare/wrangler) (v1.17+). Install it, connect to your Cloudflare account, and deploy the worker.
 
 ```bash
-wrangler generate my-ts-project https://github.com/cloudflare/worker-typescript-template
+wrangler publish
 ```
 
-### 👩 💻 Developing
+## Development
 
-[`src/index.ts`](./src/index.ts) calls the request handler in [`src/handler.ts`](./src/handler.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
+- Main entry: [`src/index.ts`](./src/index.ts)
+- Handler: [`src/handler.ts`](./src/handler.ts)
+- Monitors Discord incidents and returns relevant status info
 
-### 🧪 Testing
+## Testing
 
-This template comes with jest tests which simply test that the request handler can handle each request method. `npm test` will run your tests.
+Run tests with Jest:
 
-### ✏️ Formatting
+```bash
+npm test
+```
 
-This template uses [`prettier`](https://prettier.io/) to format the project. To invoke, run `npm run format`.
+## Formatting
 
-### 👀 Previewing and Publishing
+Keep your code pretty with Prettier:
 
-For information on how to preview and publish your worker, please see the [Wrangler docs](https://developers.cloudflare.com/workers/tooling/wrangler/commands/#publish).
+```bash
+npm run format
+```
 
-## 🤢 Issues
+## Preview & Deploy
 
-If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/cloudflare/worker-typescript-template/issues). If the problem is with Wrangler, please file an issue [here](https://github.com/cloudflare/wrangler/issues).
+Use Wrangler to preview and publish your worker. See [Wrangler commands](https://developers.cloudflare.com/workers/tooling/wrangler/commands/#publish) for details.
 
-## ⚠️ Caveats
+## Issues & Feedback
 
-The `service-worker-mock` used by the tests is not a perfect representation of the Cloudflare Workers runtime. It is a general approximation. We recommend that you test end to end with `wrangler dev` in addition to a [staging environment](https://developers.cloudflare.com/workers/tooling/wrangler/configuration/environments/) to test things before deploying.
+Found a bug or have an idea? File an issue or open a PR—everyone's welcome!
+
+## Caveats
+
+Tests use `service-worker-mock`, which is close but not identical to the real Cloudflare runtime. Always test with `wrangler dev` and, if possible, a staging environment before deploying.
+
+---
+
+Happy coding! 🚀

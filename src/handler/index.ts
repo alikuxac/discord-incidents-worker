@@ -1,12 +1,13 @@
 /* eslint-disable no-case-declarations */
-import { API_BASE } from '../constants'
+import { env } from 'cloudflare:workers';
+import { API_BASE } from '../constants';
 import { StatusPageIncident, StatusPageResult } from '../interface/StatusPage'
 import { DateTime } from 'luxon'
 
 import WebhookClient from '../lib/WebhookClient'
 import { DataEntry } from '../interface/DataEntry'
 
-export default async function update(env: Env) {
+export default async function () {
   const hook = new WebhookClient(env.WEBHOOK_ID, env.WEBHOOK_TOKEN);
 
   const fetchApi = (await fetch(`${API_BASE}/incidents.json`).then((r) =>

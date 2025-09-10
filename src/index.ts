@@ -20,7 +20,7 @@ export async function handleRequest(
       return new Response('Ok')
 
     case '/update':
-      return await update(env);
+      return await update();
     default:
       return new Response('Not Found', { status: 404 })
   }
@@ -31,7 +31,7 @@ export default {
     return await handleRequest(request, env);
   },
 
-  async scheduled(controller_: ScheduledController, env: Env) {
-    return await update(env);
+  async scheduled(controller_: ScheduledController, env_: Env) {
+    return await update();
   }
 };

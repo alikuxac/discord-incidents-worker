@@ -13,13 +13,12 @@ import {
   RESTPatchAPIWebhookWithTokenMessageResult,
   RouteBases,
   Routes,
-  APIEmbed,
 } from 'discord-api-types/v10'
-import { DateTime } from 'luxon'
+import { DateTime } from 'luxon';
 
 export default class WebhookClient {
-  private readonly webhookID: string
-  private readonly webhookToken: string
+  private readonly webhookID: string;
+  private readonly webhookToken: string;
 
   constructor(webhookID: string, webhookToken: string) {
     this.webhookID = webhookID
